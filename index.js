@@ -88,11 +88,11 @@ io.on("connection",(socket)=>{
   socket.on('join', (room) => {
     console.log(`Socket ${socket.id} joining ${room}`);
     socket.join(room);
-    io.to(room).emit('play', [
-      null, null,null,
-      null, null,null,
-      null, null,null,
-  ]);
+  //   io.to(room).emit('play', [
+  //     null, null,null,
+  //     null, null,null,
+  //     null, null,null,
+  // ]);
     console.log(room)
     rooms[room].players++
     console.log("Room " + room + " have " + rooms[room].players + " users")
