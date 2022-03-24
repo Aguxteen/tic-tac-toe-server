@@ -126,7 +126,7 @@ app.get("/rooms",( req , res )=>{
   res.send(rooms)
 })
 app.get("/1",( req , res )=>{
-  res.send("Im alive part 2 :P")
+  res.send("Im alive part 3 :P")
 })
 /// Server listener
 server.listen(port || 8080, ()=>{
