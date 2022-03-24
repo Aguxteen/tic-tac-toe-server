@@ -7,14 +7,14 @@ const app = express()
 const server = require("http").Server(app)
 const io = require ("socket.io")(server, {
     cors: {
-      origin: ["http://localhost:3000","https://tic-tac-toe-pedro-peyon.vercel.app/"],
+      origin: ["http://localhost:3000","https://tic-tac-toe-pedro-peyon.vercel.app"],
       methods: ["*"]
     }
   });
 const cors = require ("cors")
 const corsOptions = {
     origin: [
-      'http://localhost:3000',"https://tic-tac-toe-pedro-peyon.vercel.app/",
+      'http://localhost:3000',"https://tic-tac-toe-pedro-peyon.vercel.app",
     ]
   }
 app.use(cors(corsOptions))
