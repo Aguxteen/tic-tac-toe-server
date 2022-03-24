@@ -74,7 +74,7 @@ io.on("connection",(socket)=>{
     rooms[room].players--
     console.log("Room " + room + " have " + rooms[room].players + " users")
     if(room!=="Selection"){
-      console.log("AAAAAAAAAAAAAAAA",room)
+      console.log(room)
       io.to(room).emit('all-leave');
       io.of().in(room).disconnectSockets();
       rooms[room].players=0;
@@ -97,7 +97,6 @@ io.on("connection",(socket)=>{
     rooms[room].players++
     console.log("Room " + room + " have " + rooms[room].players + " users")
     io.to("Selection").emit('change', rooms);
-    console.log("emitido")
 
  });
 
@@ -126,7 +125,9 @@ app.get("/",( req , res )=>{
 app.get("/rooms",( req , res )=>{
   res.send(rooms)
 })
-
+app.get("/1",( req , res )=>{
+  res.send("Im alive part 2 :P")
+})
 /// Server listener
 server.listen(port || 8080, ()=>{
     console.log("listening at *: " + (port || 8080) )
